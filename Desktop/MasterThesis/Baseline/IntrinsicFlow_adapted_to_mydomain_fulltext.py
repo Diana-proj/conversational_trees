@@ -209,12 +209,13 @@ zur Einzelansicht § 15"""
 def initial_prompt (DOMAIN):
     prompt = f"""
 Given the context of the document {DOMAIN}, design a structured, logically coherent, directed acyclic dialog flow suitable for visualization with mermaid.js.
-The flow must model a realistic conversation between a user and a bot.
 
 Core Behavior
 
-The user always starts with a vague, practical question in natural language (e.g., about reimbursement, travel costs, accommodation, etc.).
-Never assume the user knows technical terms or the content of the document.
+The bot asks ROOT "Was möchten Sie zur Reisekostenabrechnung wissen? Zu welchem Thema haben Sie Fragen?" and offers top level categories of topics.
+The final flow must model a realistic conversation between a user and a bot. The user has an informational need or question (e.g., about reimbursement, travel costs, accommodation, etc.).
+Never assume the user knows technical terms or the content of the document. 
+
 The bot guides the user through progressive narrowing:
 Broad intent
 More specific question
